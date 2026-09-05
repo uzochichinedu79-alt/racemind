@@ -1,11 +1,18 @@
 from fastapi import FastAPI
 
+from app.core.database import Base, engine
+from app.models.driver import Driver
+from app.models.race import Race
+from app.api.routes.drivers import router as drivers_router
 
 app = FastAPI(
     title="RaceMind API",
     description="AI-powered Formula 1 race strategy intelligence platform",
     version="1.0.0",
 )
+
+
+app.include_router(drivers_router)
 
 
 @app.get("/")
