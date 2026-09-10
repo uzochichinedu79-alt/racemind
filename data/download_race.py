@@ -57,3 +57,21 @@ print("Race results saved.")
 print("Lap data saved.")
 print(f"Results rows: {len(results)}")
 print(f"Lap rows: {len(laps)}")
+
+print("Race results saved.")
+print("Lap data saved.")
+print(f"Results rows: {len(results)}")
+print(f"Lap rows: {len(laps)}")
+
+
+print("Loading telemetry...")
+
+telemetry = session.laps.pick_drivers(["NOR"]).pick_fastest().get_telemetry()
+
+telemetry.to_csv(
+    DATA_DIR / "monaco_2025_norris_telemetry.csv",
+    index=False
+)
+
+print("Telemetry saved.")
+print(f"Telemetry rows: {len(telemetry)}")
