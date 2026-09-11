@@ -75,3 +75,29 @@ telemetry.to_csv(
 
 print("Telemetry saved.")
 print(f"Telemetry rows: {len(telemetry)}")
+
+print("Extracting pit stops...")
+
+pit_stops = session.laps[
+    session.laps["PitInTime"].notna()
+].copy()
+
+pit_stops = pit_stops[
+    [
+        "Driver",
+        "LapNumber",
+        "Stint",
+        "Compound",
+        "TyreLife",
+        "PitInTime",
+        "PitOutTime",
+    ]
+]
+
+pit_stops.to_csv(
+    DATA_DIR / "monaco_2025_pit_stops.csv",
+    index=False
+)
+
+print("Pit stops saved.")
+print(f"Pit stops detected: {len(pit_stops)}")
