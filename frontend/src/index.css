@@ -1,0 +1,314 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f5f5f2;
+  color: #171717;
+}
+
+button,
+a {
+  font: inherit;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+}
+
+/* Sidebar */
+
+.sidebar {
+  width: 240px;
+  min-height: 100vh;
+  background: #111111;
+  color: white;
+  padding: 32px 22px;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.8px;
+  margin-bottom: 55px;
+}
+
+.logo span {
+  font-weight: 400;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+nav a {
+  color: #8e8e8e;
+  text-decoration: none;
+  padding: 12px 14px;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+nav a:hover,
+nav a.active {
+  background: #252525;
+  color: white;
+}
+
+.sidebar-footer {
+  margin-top: auto;
+  border-top: 1px solid #292929;
+  padding-top: 20px;
+}
+
+.sidebar-footer p {
+  font-size: 12px;
+  color: #777;
+  margin-bottom: 5px;
+}
+
+.sidebar-footer span {
+  font-size: 12px;
+  color: #aaa;
+}
+
+/* Main */
+
+.main-content {
+  flex: 1;
+  padding: 42px 48px;
+  max-width: 1500px;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 48px;
+}
+
+.eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #888;
+  margin-bottom: 8px;
+}
+
+h1 {
+  font-size: 32px;
+  letter-spacing: -1.2px;
+}
+
+h2 {
+  font-size: 20px;
+  letter-spacing: -0.5px;
+}
+
+.race-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: white;
+  border: 1px solid #e4e4e0;
+  padding: 9px 13px;
+  border-radius: 6px;
+  font-size: 12px;
+  color: #555;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #171717;
+}
+
+/* Overview */
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 20px;
+}
+
+.section-heading button,
+.ai-button {
+  border: none;
+  background: #171717;
+  color: white;
+  padding: 11px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.driver-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.driver-card {
+  background: white;
+  border: 1px solid #e5e5e1;
+  border-radius: 8px;
+  padding: 22px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 15px;
+  min-height: 150px;
+}
+
+.driver-position {
+  font-size: 12px;
+  color: #999;
+  font-weight: 700;
+}
+
+.driver-code {
+  font-size: 11px;
+  font-weight: 700;
+  color: #888;
+  letter-spacing: 1px;
+}
+
+.driver-card h3 {
+  font-size: 17px;
+  margin: 3px 0;
+}
+
+.team {
+  color: #999;
+  font-size: 12px;
+}
+
+.pace {
+  grid-column: 2;
+  margin-top: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pace span,
+.panel-label {
+  color: #999;
+  font-size: 9px;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+.pace strong {
+  font-size: 15px;
+}
+
+/* Analysis */
+
+.analysis-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.panel {
+  background: white;
+  border: 1px solid #e5e5e1;
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
+
+.pace-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.pace-row {
+  display: grid;
+  grid-template-columns: 35px 1fr 65px;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+}
+
+.pace-row > span {
+  font-weight: 700;
+}
+
+.pace-row strong {
+  text-align: right;
+  font-size: 12px;
+}
+
+.bar {
+  height: 5px;
+  background: #eeeeeb;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  background: #171717;
+  border-radius: 10px;
+}
+
+.ai-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.ai-badge {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border: 1px solid #ddd;
+  padding: 5px 7px;
+  border-radius: 4px;
+}
+
+.ai-text {
+  color: #555;
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 25px;
+}
+
+.ai-button {
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+@media (max-width: 900px) {
+  .sidebar {
+    width: 190px;
+  }
+
+  .main-content {
+    padding: 30px;
+  }
+
+  .driver-grid,
+  .analysis-grid {
+    grid-template-columns: 1fr;
+  }
+}

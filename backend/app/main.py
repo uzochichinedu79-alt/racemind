@@ -4,6 +4,8 @@ from app.core.database import Base, engine
 from app.models.driver import Driver
 from app.models.race import Race
 from app.api.routes.drivers import router as drivers_router
+from app.api.routes.analytics import router as analytics_router
+app.include_router(analytics_router)
 
 app = FastAPI(
     title="RaceMind API",
